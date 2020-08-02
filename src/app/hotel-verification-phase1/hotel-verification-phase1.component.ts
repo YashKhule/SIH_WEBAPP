@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router'
+import {ActivatedRoute, Router} from '@angular/router'
 @Component({
   selector: 'app-hotel-verification-phase1',
   templateUrl: './hotel-verification-phase1.component.html',
@@ -7,7 +7,8 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class HotelVerificationPhase1Component implements OnInit {
 stateid:any;
-  constructor(private activatedroute:ActivatedRoute) { 
+  constructor(private activatedroute:ActivatedRoute,
+    private router : Router) { 
     this.activatedroute.paramMap.subscribe(params =>{
       this.stateid=params.get('id')
       console.log(this.stateid);
@@ -19,6 +20,11 @@ stateid:any;
 
   getData(){
     
+  }
+
+  back(){
+    console.log('back');
+    this.router.navigateByUrl('')
   }
 
 }
