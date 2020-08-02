@@ -1,0 +1,189 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+
+<body>
+<div class="container">
+<div class="sidenav">
+    <a (click)="dash()" >DashBoard</a>
+    <a (click)="count()">Tourist Count</a>
+    <a (click)="feedback()">Tourist Feedback</a>
+    <a (click)="hotelverification()">Hotel Verification</a>
+    <a (click)="locationverification()">Location Verification</a>
+    <a (click)="logout()">LogOut</a>
+  </div>
+  
+
+  <div class="main">
+    <div *ngIf="dashon">
+        <div class="card">
+            
+            <div class="row">
+                <div class="col-4">
+                    <img src="../../assets/Tajmahal.jpg" width="100%" height="100%">
+                </div>
+                <div class="col-8">
+                    <div class="card-header"> <h3 class="name">TAJ MAHAL</h3> </div>
+                  
+                    <div> 
+                        <span class="heading">User Rating</span>
+                        {{rate1}}<span class="fa fa-star checked"></span>
+                        <span class="heading offset-2">User Rating</span>
+                        {{rate2}}<span class="fa fa-star checked"></span>
+                    </div>
+                    <div>
+                        <span class="heading">User Rating</span>
+                        {{rate3}}<span class="fa fa-star checked"></span>
+                        
+                        <span class="heading offset-2">User Rating</span>
+                        {{rate4}}<span class="fa fa-star checked"></span>
+                    </div>
+                    <div>
+                        <span class="heading">User Rating</span>
+                        {{rate5}}<span class="fa fa-star checked"></span>
+                    </div>
+                        </div>
+                </div>
+           
+            <div class="card-footer">
+                <p>Suggestions</p>
+            </div>
+    </div>
+
+
+</div>
+
+      <div *ngIf="counton">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form>
+                    <div class="card-body row  align-items-center">
+
+                        <!--end of col-->
+                        <div class="col">
+                            <input class="form-control " type="search" placeholder="Search topics or keywords">
+                        </div>
+                        <!--end of col-->
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                </form>
+            </div>
+            <!--end of col-->
+        </div>
+          <div class="row">
+              <div class="col-6">
+        <div class="card" style="width: 18rem;">
+          <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="../../assets/Tajmahal.jpg" >
+          
+          <div class="card-body ">
+            <h2 class="card-footer ">TAJ MAHAL,&nbsp;Agra</h2>
+          </div>
+          <div class="card-footer">
+            <p class="card-text">Highest Count: {{highest_count}}</p>
+          </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card" style="width: 18rem;">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="180" src="../../assets/NAGALAND.jpg" >
+              <div class="card-body ">
+                <h2 class="card-footer ">NAGALAND,Dimapur</h2>
+              </div>
+              <div class="card-footer">
+                <p class="card-text">Lowest Count: {{lowest_count}}</p>
+              </div>
+            </div>
+      </div>
+    </div>
+</div>
+
+      <div *ngIf="feedbackon">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <form>
+                    <div class="card-body row  align-items-center">
+
+                        <!--end of col-->
+                        <div class="col">
+                            <input class="form-control " type="search" placeholder="Search topics or keywords">
+                        </div>
+                        <!--end of col-->
+                        <div class="col-auto">
+                            <button class="btn btn-lg btn-success" type="submit">Search</button>
+                        </div>
+                        <!--end of col-->
+                    </div>
+                </form>
+            </div>
+            <!--end of col-->
+        </div>
+  </div>
+
+  <div *ngIf="hotelon">
+      <div class="row">
+          <div class="col-6">
+    <ol class="gradient-list">
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Andra Pradesh']">Andhra Pradesh</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Assam']">Assam</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Bihar']">Bihar</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Chhattisgarh ']">Chhattisgarh</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Goa']">Goa</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Gujarat']">Gujarat</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Haryana']">Haryana</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Himachal Pradesh']">Himachal Pradesh</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Jammu and Kashmir']">Jammu and Kashmir</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Jharkhand']">Jharkhand</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Karnataka']">Karnataka</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Kerala']">Kerala</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Madhya Pradesh']">Madhya Pradesh</li>
+        <li style="background:#feeaea" [routerLink]="['/hotel-phase1','Maharashtra']">Maharashtra</li>
+    </ol>
+    </div>
+    <div class="col-6">
+    <ol class="gradient-list">
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Manipur']">Manipur</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Meghalaya']">Meghalaya</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Mizoram']">Mizoram</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Nagaland']">Nagaland</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Odisha']">Odisha</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Punjab']">Punjab</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Rajasthan']">Rajasthan</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Sikkim']">Sikkim</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Tamil Nadu']">Tamil Nadu</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Tripura']">Tripura</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Telangana']">Telangana</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Uttar Pradesh']">Uttar Pradesh</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','Uttarakhand']">Uttarakhand</li>
+        <li style="background:#f1d3f6" [routerLink]="['/hotel-phase1','West Bengal']">West Bengal</li>
+      </ol>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="locationon">
+    <p>LOCATION VERIFICATION</p>
+</div>
+
+
+</div>
+</div>
+</body>
+  </html>
