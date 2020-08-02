@@ -17,4 +17,8 @@ stateid:any;
   ngOnInit(): void {
   }
 
+  getData(){
+    
+  }
+
 }
